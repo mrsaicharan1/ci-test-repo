@@ -1,17 +1,23 @@
 import unittest
 
-from sum import *
+from functions import *
 
-class TestSum(unittest.TestCase):
 
-    def test_sum_1(self):
-        self.assertEqual(add_numbers(1,2), 3, "expected sum of 1 and 2 to be 3 but got " + str(add_numbers(1,2)))
+class TestFunctions(unittest.TestCase):
+    """ Test add_values
+    """
+    def setUp(self):
+        self.value1 = 10
+        self.value2 = 20
 
-    def test_sum_2(self):
-        self.assertEqual(add_numbers(10,20), 30, "expected sum of 10 and 20 to be 30 but got " + str(add_numbers(10,20)))
+    def test_add_values(self):
+        self.assertEqual(30, add_two_values(self.value1, self.value2))
 
-    def test_sum_3(self):
-        self.assertEqual(add_three_numbers(10,20,30), 60, "expected sum of 10, 20 and 30 to be 60 but got" + str(add_three_numbers(10,20,30)))
+    def test_add_values_two(self):
+        self.assertEqual(15, add_multiple_values(1,2,3,4,5))
 
-if __name__ == "__main__":
+    def test_full_name(self):
+        self.assertEqual("Doe, John", get_full_name("John", "Doe"))
+
+if __name__ == '__main__':
     unittest.main()
